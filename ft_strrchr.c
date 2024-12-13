@@ -6,7 +6,7 @@
 /*   By: creynalt <creynalt@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 19:10:01 by creynalt          #+#    #+#             */
-/*   Updated: 2024/12/03 14:45:08 by creynalt         ###   ########.fr       */
+/*   Updated: 2024/12/12 23:25:15 by creynalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	i;
+	int		i;
+	char	*res;
 
-	i = ft_strlen(s) - 1;
-	while (i >= 0)
+	i = 0;
+	res = 0;
+	while (s[i])
 	{
-		if (s[i] == c)
-		{
-			return ((char *)(s + i));
-		}
-		i--;
+		if (s[i] == (unsigned char)c)
+			res = (char *)(s + i);
+		i++;
 	}
-	return (NULL);
+	if (s[i] == (unsigned char)c)
+		res = (char *)(s + i);
+	return (res);
 }
 
 /* void main()

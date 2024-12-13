@@ -6,7 +6,7 @@
 /*   By: creynalt <creynalt@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:09:42 by creynalt          #+#    #+#             */
-/*   Updated: 2024/12/11 17:05:09 by creynalt         ###   ########.fr       */
+/*   Updated: 2024/12/13 01:25:33 by creynalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,19 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int		longsrc;
-	int		longdst;
-	int		i;
-	char	*temp;
+	size_t	londst;
+	size_t	lonsrc;
+	size_t	cont;
 
-	longdst = ft_strlen(dst);
-	longsrc = ft_strlen(src);
-	i = 0;
-	temp = (char *)src;
-	if (longdst >= size)
-		return (longsrc + size);
-	while (src[i] && longdst < size - 1)
-	{
-		dst[longdst] = src[i];
-		longdst++;
-		i++;
-	}
-	dst[longdst] = '\0';
-	return (longdst + longsrc);
+	londst = ft_strlen(dst);
+	lonsrc = ft_strlen(src);
+	if (size <= londst)
+		return (lonsrc + size);
+	cont = londst;
+	while (*src != '\0' && cont < (size - 1))
+		*(dst + cont++) = *src++;
+	*(dst + cont) = '\0';
+	return (londst + lonsrc);
 }
 
 /* void main()

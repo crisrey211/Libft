@@ -6,7 +6,7 @@
 /*   By: creynalt <creynalt@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:18:53 by creynalt          #+#    #+#             */
-/*   Updated: 2024/12/11 14:13:40 by creynalt         ###   ########.fr       */
+/*   Updated: 2024/12/13 01:07:59 by creynalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 
 	i = 0;
 	len = ft_strlen(src);
-	if (len < 1)
+	if (size < 1)
 		return (len);
 	while (src[i] != '\0' && i < (size -1))
 	{

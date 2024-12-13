@@ -6,7 +6,7 @@
 /*   By: creynalt <creynalt@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 10:25:27 by creynalt          #+#    #+#             */
-/*   Updated: 2024/12/11 14:31:01 by creynalt         ###   ########.fr       */
+/*   Updated: 2024/12/12 16:57:32 by creynalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	while (lst)
 	{
 		f(lst->content);
-		lst = lst ->content;
+		lst = lst -> next;
 	}
 }

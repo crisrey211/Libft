@@ -6,7 +6,7 @@
 /*   By: creynalt <creynalt@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 11:42:24 by creynalt          #+#    #+#             */
-/*   Updated: 2024/12/11 13:09:10 by creynalt         ###   ########.fr       */
+/*   Updated: 2024/12/12 20:57:54 by creynalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = get_start_index(s1, set);
 	end = get_end_index(s1, set);
 	if (end <= start)
-		return ((char *)calloc(1, sizeof(char)));
+		return ((char *)ft_calloc(1, sizeof(char)));
 	trimmed_str = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (!trimmed_str)
 		return (NULL);

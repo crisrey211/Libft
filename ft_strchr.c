@@ -6,7 +6,7 @@
 /*   By: creynalt <creynalt@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 19:10:03 by creynalt          #+#    #+#             */
-/*   Updated: 2024/12/03 14:45:33 by creynalt         ###   ########.fr       */
+/*   Updated: 2024/12/12 23:18:32 by creynalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,24 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	int		i;
+	char	a;
 
 	i = 0;
-	while (s[i])
+	a = (char)c;
+	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == a)
 		{
-			return ((char *)(s + i));
+			return ((char *)&s[i]);
 		}
 		i++;
 	}
-	return (NULL);
+	if (s[i] == a)
+	{
+		return ((char *) &s[i]);
+	}
+	return (0);
 }
 
 /* void main()

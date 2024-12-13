@@ -6,7 +6,7 @@
 /*   By: creynalt <creynalt@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:26:02 by creynalt          #+#    #+#             */
-/*   Updated: 2024/12/04 17:39:20 by creynalt         ###   ########.fr       */
+/*   Updated: 2024/12/13 03:10:56 by creynalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	new -> next = *lst;
-	*lst = new;
+	if (lst && new)
+	{
+		new -> next = *lst;
+		*lst = new;
+	}
 }

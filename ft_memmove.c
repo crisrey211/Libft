@@ -6,7 +6,7 @@
 /*   By: creynalt <creynalt@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:17:51 by creynalt          #+#    #+#             */
-/*   Updated: 2024/11/29 11:53:06 by creynalt         ###   ########.fr       */
+/*   Updated: 2024/12/12 23:31:00 by creynalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,25 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*d;
 	char	*s;
+	char	*d;
 	size_t	i;
 
-	d = (char *) dest;
+	if (!dest && !src)
+		return (NULL);
 	s = (char *) src;
+	d = (char *) dest;
 	i = 0;
-	while (i < n)
+	if (d > s)
+		while (n-- > 0)
+			d[n] = s[n];
+	else
 	{
-		d[i] = s[i];
-		i++;
+		while (i < n)
+		{
+			d[i] = s[i];
+			i++;
+		}
 	}
 	return (dest);
 }

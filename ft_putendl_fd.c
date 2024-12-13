@@ -6,7 +6,7 @@
 /*   By: creynalt <creynalt@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:35:51 by creynalt          #+#    #+#             */
-/*   Updated: 2024/12/09 19:12:19 by creynalt         ###   ########.fr       */
+/*   Updated: 2024/12/13 02:08:06 by creynalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,9 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+	if (!s)
+		return ;
+	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }
 

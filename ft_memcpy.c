@@ -6,7 +6,7 @@
 /*   By: creynalt <creynalt@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 18:09:46 by creynalt          #+#    #+#             */
-/*   Updated: 2024/11/29 17:40:41 by creynalt         ###   ########.fr       */
+/*   Updated: 2024/12/12 23:30:02 by creynalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char	*d;
-	char	*s;
-	size_t	i;
+	size_t			i;
 
-	d = (char *) dest;
-	s = (char *) src;
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	i = 0;
 	while (i < n)
 	{
-		d[i] = s[i];
+		((char *)dest)[i] = ((const char *)src)[i];
 		i++;
 	}
 	return (dest);

@@ -6,7 +6,7 @@
 /*   By: creynalt <creynalt@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 16:31:36 by creynalt          #+#    #+#             */
-/*   Updated: 2024/12/11 12:58:53 by creynalt         ###   ########.fr       */
+/*   Updated: 2024/12/13 02:57:05 by creynalt         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,22 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	i;
+	size_t	len;
 	char	*res;
 
+	if (!s || !(*f))
+		return (0);
 	i = 0;
-	res = malloc(ft_strlen(s)+1 * sizeof(char));
+	len = ft_strlen(s);
+	res = malloc(len + 1);
 	if (!res)
-		return (NULL);
-	while (i < ft_strlen(s))
+		return (0);
+	while (i < len)
 	{
 		res[i] = (*f)(i, s[i]);
 		i++;
 	}
-	res[i] = 0;
+	res[i] = '\0';
 	return (res);
 }
 
